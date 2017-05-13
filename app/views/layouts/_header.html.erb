@@ -1,0 +1,39 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Portland Bus Lane Project", root_path, class: "navbar-brand" %>
+    </div>
+
+    <div id="navbar" class="navbar-collapse collapse">
+
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Test", "#" %></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <% if user_signed_in? %>
+          <li><%= link_to "<i class='fa fa-user-circle-o' aria-hidden='true'></i> #{current_user.email}".html_safe, edit_user_registration_path %></li>
+          <li role="separator" class="divider"></li>
+          <li><%= link_to "<i class='fa fa-lock' aria-hidden='true'></i> Logout".html_safe, destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li>
+          <%= link_to "<i class='fa fa-unlock-alt' aria-hidden='true'></i> Login".html_safe, new_user_session_path %>
+          </li>
+        <% end %>
+
+        <% if user_signed_in? && current_user.is_admin? %>
+          <li><%= link_to "Users", admin_users_path %></li>
+        <% end %>
+
+      </ul>
+
+    </div><!--/.nav-collapse -->
+  </div><!--/.container-fluid -->
+</nav>

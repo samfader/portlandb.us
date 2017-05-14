@@ -27,11 +27,6 @@
           <%= link_to "<i class='fa fa-unlock-alt' aria-hidden='true'></i> Login".html_safe, new_user_session_path %>
           </li>
         <% end %>
-
-        <% if user_signed_in? && current_user.is_admin? %>
-          <li><%= link_to "Users", admin_users_path %></li>
-        <% end %>
-
       </ul>
 
     </div><!--/.nav-collapse -->

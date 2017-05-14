@@ -34,9 +34,9 @@ set :linked_files, %w{config/database.yml}
 set :linked_dirs,  %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 set :bundle_binstubs, nil
 
-set :rollbar_token, ENV["CRD_ROLLBAR_ACCESS_TOKEN"]
-set :rollbar_env, Proc.new { fetch :stage }
-set :rollbar_role, Proc.new { :app }
+# set :rollbar_token, ENV["ROLLBAR_ACCESS_TOKEN"]
+# set :rollbar_env, Proc.new { fetch :stage }
+# set :rollbar_role, Proc.new { :app }
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'

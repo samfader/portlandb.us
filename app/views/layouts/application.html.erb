@@ -10,6 +10,8 @@
   <body>
     <div id="main" class="container">
       <%= render partial: "layouts/header" %>
+      <%= flash_messages %>
+
       <%= yield %>
     </div>
     <%= render partial: "layouts/footer" %>

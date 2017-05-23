@@ -28,7 +28,7 @@ class VolunteersController < ApplicationController
 
     respond_to do |format|
       if @volunteer.save
-        format.html { redirect_to @volunteer, notice: 'Volunteer was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Thanks for submitting a Volunteer application.' }
         format.json { render :show, status: :created, location: @volunteer }
       else
         format.html { render :new }

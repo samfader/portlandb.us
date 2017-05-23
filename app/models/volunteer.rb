@@ -1,3 +1,12 @@
 class Volunteer < ApplicationRecord
-  FOCUS = %w(Policy/Coalition Building/Elected Official Engagement/Direct Action/Facebook/Twitter/Event Planning)
+  FOCUS = %w(
+      Policy
+      Coalition\ Building
+      Elected\ Official\ Engagement
+      Event\ Planning
+      Direct\ Action
+      Public\ Testimony
+      Facebook
+      Twitter
+    )
 end

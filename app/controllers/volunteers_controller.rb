@@ -1,6 +1,6 @@
 class VolunteersController < ApplicationController
   before_action :set_volunteer, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:index, :show, :edit, :update, :destroy]
   # GET /volunteers
   # GET /volunteers.json
   def index
@@ -69,6 +69,6 @@ class VolunteersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def volunteer_params
-      params.require(:volunteer).permit(:name, :address_1, :address_2, :email, :phone, :focus, :essay)
+      params.require(:volunteer).permit(:name, :address, :email, :phone, :focus, :essay)
     end
 end

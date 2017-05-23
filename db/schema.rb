@@ -34,8 +34,7 @@ ActiveRecord::Schema.define(version: 20170514033217) do
 
   create_table "volunteers", force: :cascade do |t|
     t.string   "name"
-    t.string   "address_1"
-    t.string   "address_2"
+    t.string   "address"
     t.string   "email"
     t.string   "phone"
     t.text     "focus",      default: [],              array: true

@@ -4,4 +4,7 @@ class StaticController < ApplicationController
 
   def about
   end
+
+  def media
+  end
 end
